@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  line-height: 1.4;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, auto));
+  margin: 16px 0;
+  gap: 20px;
+}
+
+.products-container h2 {
+  font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid lightgray;
+  padding: 12px;
+  border-radius: 3px;
+}
+
+.product p {
+  margin-bottom: 0;
+}
+
+.more-btn {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.product img {
+  padding: 0 16px;
+  max-height: 226px;
+  object-fit: contain;
+  flex: 1;
+}
