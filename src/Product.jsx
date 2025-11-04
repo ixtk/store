@@ -1,12 +1,16 @@
-export function Product() {
+export function Product(props) {
   return (
     <div className="product">
       <img
-        src="https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692947383286-714WUJlhbLS._SL1500_.jpg"
-        alt=""
+        src={props.image}
+        alt={props.title}
       />
-      <h2 className="">My Product</h2>
-      <p>12 GEL</p>
+      <h2>{props.title}</h2>
+      <p>{props.price} GEL</p>
+      <p>Sale price: {props.salePrice} GEL</p>
+      
+      {/* პირობა ? ჭეშმარიტია : მცდარია */}
+      {props.stock === 0 ? "Out of stock" : "Available"}
     </div>
   )
 }
