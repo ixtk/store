@@ -22,6 +22,7 @@ function App() {
               title={pr.title}
               image={pr.image}
               price={pr.price}
+              isPopular={pr.popular}
             />
           )
         })}

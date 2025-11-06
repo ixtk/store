@@ -62,3 +62,13 @@ button {
   object-fit: contain;
   flex: 1;
 }
+
+.sale {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.popular {
+  border-color: orange;
+  border-style: dashed;
+}
