@@ -12,24 +12,22 @@
 */
 }
 
-// მოიძიე && ოპერატორი და ჩაანაცვლე ? სინტაქსი ზოგიერთ ადგილას
-
-export function Product(props) {
+export function Product({ isPopular, image, title, salePrice, price, stock }) {
   return (
-    <div className={props.isPopular === true ? "popular" : "product"}>
-      <img src={props.image} alt={props.title} />
-      <h2>{props.title}</h2>
+    <div className={isPopular === true ? "popular product" : "product"}>
+      <img src={image} alt={title} />
+      <h2>{title}</h2>
 
       {/* ელემენტის კლასის პირობითი მინიჭება */}
-      <p className={props.salePrice > 0 ? "sale" : ""}>{props.price} GEL</p>
+      <p className={salePrice > 0 && "sale"}>{price} GEL</p>
 
       {/* ელემენტის პირობითი გამოტანა */}
-      {props.salePrice === null ? "" : <p>Sale price: {props.salePrice} GEL</p>}
+      {salePrice !== null && <p>Sale price: {salePrice} GEL</p>}
 
       {/* ტექსტის პირობითი გამოტანა */}
-      {props.stock === 0 ? "Out of stock" : "Available"}
+      {stock === 0 && "Out of stock"}
 
-      {props.isPopular === true ? (
+      {isPopular === true && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -45,8 +43,6 @@ export function Product(props) {
           <path d="M16 7h6v6" />
           <path d="m22 7-8.5 8.5-5-5L2 17" />
         </svg>
-      ) : (
-        ""
       )}
     </div>
   )

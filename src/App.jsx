@@ -11,22 +11,22 @@ import { Product } from "./Product"
 */
 
 function App() {
+  const productElements = products.map(function (pr) {
+    return (
+      <Product
+        stock={pr.stock}
+        salePrice={pr.salePrice}
+        title={pr.title}
+        image={pr.image}
+        price={pr.price}
+        isPopular={pr.popular}
+      />
+    )
+  })
+
   return (
     <div className="container">
-      <div className="products-container">
-        {products.map(function (pr) {
-          return (
-            <Product
-              stock={pr.stock}
-              salePrice={pr.salePrice}
-              title={pr.title}
-              image={pr.image}
-              price={pr.price}
-              isPopular={pr.popular}
-            />
-          )
-        })}
-      </div>
+      <div className="products-container">{productElements}</div>
     </div>
   )
 }
