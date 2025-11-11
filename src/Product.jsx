@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 {
   /* 
 
@@ -12,7 +14,17 @@
 */
 }
 
-export function Product({ isPopular, image, title, salePrice, price, stock }) {
+export function Product({
+  isPopular,
+  image,
+  title,
+  salePrice,
+  price,
+  stock,
+  description
+}) {
+  // isDescriptionVisible
+
   return (
     <div className={isPopular === true ? "popular product" : "product"}>
       <img src={image} alt={title} />
@@ -44,6 +56,8 @@ export function Product({ isPopular, image, title, salePrice, price, stock }) {
           <path d="m22 7-8.5 8.5-5-5L2 17" />
         </svg>
       )}
+
+      <button>View Description</button>
     </div>
   )
 }

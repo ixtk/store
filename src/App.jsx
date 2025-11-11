@@ -20,6 +20,7 @@ function App() {
         image={pr.image}
         price={pr.price}
         isPopular={pr.popular}
+        description={pr.description}
       />
     )
   })
