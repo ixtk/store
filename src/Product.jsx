@@ -23,7 +23,11 @@ export function Product({
   stock,
   description
 }) {
-  // isDescriptionVisible
+  const [isDescriptionVisible, setIsDescriptionVisible] = useState(false)
+
+  function showDescription() {
+    setIsDescriptionVisible(true)
+  }
 
   return (
     <div className={isPopular === true ? "popular product" : "product"}>
@@ -57,7 +61,11 @@ export function Product({
         </svg>
       )}
 
-      <button>View Description</button>
+      {isDescriptionVisible === true && <p>{description}</p>}
+
+      {isDescriptionVisible === false && (
+        <button onClick={showDescription}>View Description</button>
+      )}
     </div>
   )
 }

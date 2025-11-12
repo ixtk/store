@@ -2,15 +2,11 @@ import "./App.css"
 import products from "./products.json"
 import { Product } from "./Product"
 
-/*
-<div className="product">
-  <img src={pr.image} alt="" />
-  <h2>{pr.title}</h2>
-  <p>{pr.price} GEL</p>
-</div>
-*/
-
 function App() {
+  function changeProductCategory(event) {
+    console.log("Changing category", event.target.value)
+  }
+
   const productElements = products.map(function (pr) {
     return (
       <Product
@@ -27,6 +23,11 @@ function App() {
 
   return (
     <div className="container">
+      <select onChange={changeProductCategory} style={{ marginTop: "16px", font: "inherit" }}>
+        <option value="music">Music</option>
+        <option value="gaming">Gaming</option>
+        <option value="audio">Audio</option>
+      </select>
       <div className="products-container">{productElements}</div>
     </div>
   )
