@@ -71,4 +71,26 @@ button {
 .popular {
   border-color: orange;
   border-style: dashed;
+  border-width: 2px;
+}
+
+.product {
+  position: relative;
+  justify-content: flex-start;
+}
+
+.product svg {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.price-cont {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.price-cont p {
+  margin: 0;
 }

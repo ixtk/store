@@ -35,10 +35,13 @@ export function Product({
       <h2>{title}</h2>
 
       {/* ელემენტის კლასის პირობითი მინიჭება */}
-      <p className={salePrice > 0 && "sale"}>{price} GEL</p>
 
-      {/* ელემენტის პირობითი გამოტანა */}
-      {salePrice !== null && <p>Sale price: {salePrice} GEL</p>}
+      <div className="price-cont">
+        <p className={salePrice > 0 && "sale"}>{price} GEL</p>
+
+        {/* ელემენტის პირობითი გამოტანა */}
+        {salePrice !== null && <p>{salePrice} GEL</p>}
+      </div>
 
       {/* ტექსტის პირობითი გამოტანა */}
       {stock === 0 && "Out of stock"}
