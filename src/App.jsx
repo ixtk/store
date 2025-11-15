@@ -1,13 +1,26 @@
 import "./App.css"
 import products from "./products.json"
 import { Product } from "./Product"
+import { useState } from "react"
 
 function App() {
+  const [filterCategory, setFilterCategory] = useState("audio")
+
   function changeProductCategory(event) {
     console.log("Changing category", event.target.value)
+    
+    setFilterCategory(event.target.value)
   }
 
-  const productElements = products.map(function (pr) {
+  const filteredProducts = products.filter(function (pr) {
+    if (pr.category === filterCategory) {
+      return true
+    } else {
+      return false
+    }
+  })
+
+  const productElements = filteredProducts.map(function (pr) {
     return (
       <Product
         stock={pr.stock}
@@ -23,8 +36,8 @@ function App() {
 
   return (
     <div className="container">
-      <select onChange={changeProductCategory} style={{ marginTop: "16px", font: "inherit" }}>
-        <option value="music">Music</option>
+      <select value={filterCategory} onChange={changeProductCategory} style={{ marginTop: "16px", font: "inherit" }}>
+        <option value="mobile">Mobile</option>
         <option value="gaming">Gaming</option>
         <option value="audio">Audio</option>
       </select>
